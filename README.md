@@ -16,7 +16,7 @@ A minimal and modern blog viewer built with Next.js, React, and Tailwind CSS. Fe
 - Node.js 18+ and npm
 - Redis server (local or remote)
 
-## Setup
+## Local Development
 
 1. Clone the repository:
 
@@ -45,9 +45,35 @@ npm run dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## Deployment
+
+### 1. Set up Redis
+
+1. Sign up for a free account at [Upstash](https://upstash.com/)
+2. Create a new Redis database
+3. Copy your Redis URL from the database details
+
+### 2. Deploy to Vercel
+
+1. Push your code to GitHub:
+
+```bash
+git remote add origin https://github.com/yourusername/blog-viewer.git
+git push -u origin main
+```
+
+2. Go to [Vercel](https://vercel.com) and sign up/login with your GitHub account
+3. Click "New Project" and import your repository
+4. Add the following environment variable:
+   - Name: `REDIS_URL`
+   - Value: Your Upstash Redis URL
+5. Click "Deploy"
+
+Your application will be deployed and you'll get a URL like: `https://your-app-name.vercel.app`
+
 ## Docker Setup (Optional)
 
-If you prefer to use Docker for Redis:
+If you prefer to use Docker for local development:
 
 1. Start Redis container:
 
